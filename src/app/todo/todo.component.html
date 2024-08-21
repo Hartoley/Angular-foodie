@@ -1,0 +1,74 @@
+<h1>This is my todo component</h1>
+
+<form action="">
+    <input name="todo" (input)="writeSomething()" [value]="todo" [(ngModel)]="newTodo" type="text">
+    <!-- <h1>{{newTodo}}</h1> -->
+    <button (click)="addTodo()">Submit</button>
+
+    <div *ngFor="let item of allTodo; let i = index">
+        <h6>{{i + 1}}.  {{item}}</h6>
+    </div>
+</form>
+
+
+<form action="" *ngIf="!displayForm">
+    <h1>Add user information</h1>
+   
+        <input [(ngModel)]="item.userName" type="text" name="userName" placeholder="Username">
+        <br><br>
+
+        <input type="text" [(ngModel)]="item.emailAddress" name="emailAddress"  placeholder="Email address">
+        <br><br>
+
+        <input type="text" [(ngModel)]="item.course" name="course" id="" placeholder="Course">
+        <br><br>
+
+        <input type="text" [(ngModel)]="item.location" name="location"  placeholder="Enter your location">
+        <br><br>
+
+        <button (click)="addToList()">Add user</button>
+
+
+    
+</form>
+
+<h1>Users information</h1>
+<table>
+    <thead>
+       <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Location</th>
+       </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let users of userInfo; let i = index">
+                <td>{{users.userName}}</td>
+                <td>{{users.emailAddress}}</td>
+                <td>{{users.course}}</td>
+                <td>{{users.location}}</td>
+                <button (click)="editUser(i)">Edit</button>
+                <button (click)="deleteUser(i)">Delete</button>
+            </tr>
+    </tbody>
+</table>
+
+<form action="" *ngIf="displayForm">
+    <h1>Edit user information</h1>
+   
+    <input [(ngModel)]="newItem.userName" type="text" name="userName" placeholder="Username">
+    <br><br>
+
+    <input type="text" [(ngModel)]="newItem.emailAddress" name="emailAddress"  placeholder="Email address">
+    <br><br>
+
+    <input type="text" [(ngModel)]="newItem.course" name="course" id="" placeholder="Course">
+    <br><br>
+
+    <input type="text" [(ngModel)]="newItem.location" name="location"  placeholder="Enter your location">
+    <br><br>
+
+    <button (click)="editUserInfo()">Edit user</button>
+</form>
+

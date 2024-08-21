@@ -1,0 +1,23 @@
+
+<div [ngSwitch]="date">
+    <div *ngSwitchCase= 0>Today is Sunday, you deserve a break </div>
+    <div *ngSwitchCase= 1>Today is Monday, work starts </div>
+    <div *ngSwitchCase= 2>Today is Tuesday, you deserve a break</div>
+    <div *ngSwitchCase= 3>Today is Wednesday, you deserve a break</div>
+    <div *ngSwitchCase= 4>Today is Thursday, you deserve a break</div>
+    <div *ngSwitchCase= 5>Today is Friday, you deserve a break</div>
+    <div *ngSwitchCase= 6>Today is Saturday, you deserve a break</div>
+    <div *ngSwitchDefault="">Canot Predict day!!! </div>
+</div>
+
+<div *ngFor="let allUser of allUserData">
+    <p>{{allUser}}</p>
+</div>
+<div *ngFor="let userInfo of fetchedInfo;">
+    <p>{{userInfo.first_name}} {{userInfo.last_name}}</p>
+    <a href="/oneuser/{{userInfo.id}}">View user</a>
+
+</div>
+<div>
+    <button (click)="fetchOneuser()">One user</button>
+</div>

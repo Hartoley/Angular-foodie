@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()" class="w-50 mx-auto px-4 py-3 shadow">
+    <div class="my-3">
+      <label for="firstName" class="form-label">First name</label>
+      <input [(ngModel)]="users.first_name" type="text" name="first_name" placeholder="First Name" class="form-control" aria-describedby="firstNameHelp">
+    </div>
+    <div class="my-3">
+      <label for="lastName" class="form-label">Last name</label>
+      <input [(ngModel)]="users.last_name" type="text" name="last_name" placeholder="Last Name" class="form-control" aria-describedby="lastNameHelp">
+    </div>
+    <div class="my-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" [(ngModel)]="users.email" name="email" placeholder="Email" class="form-control" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="my-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" [(ngModel)]="users.password" name="password" placeholder="Password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <p *ngIf="message">{{message}}</p>
+  </form>
+  

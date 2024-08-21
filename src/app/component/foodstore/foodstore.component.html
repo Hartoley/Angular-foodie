@@ -1,0 +1,104 @@
+<div class="container">
+    <header>
+      <img src="https://dcassetcdn.com/design_img/4001448/784504/28494866/5x5b49c6fbhcznq8nv1qgsr1zm_thumbnail.png" alt="Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a class="home" href="#">Home</a></li>
+          <li><a href="#">Food Menu</a></li>
+          <li><a href="#">Reserve Table</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <main class="hero-section">
+      <div [ngSwitch]="date" class="text-content">
+        <h1 *ngSwitchCase=0>It's Sunday</h1>
+        <h1 *ngSwitchCase=1>It's Monday</h1>
+        <h1 *ngSwitchCase=2>It's Tuesday</h1>
+        <h1 *ngSwitchCase=3>It's Wednesday</h1>
+        <h1 *ngSwitchCase=4>It's Thursday</h1>
+        <h1 *ngSwitchCase=5>It's Friday</h1>
+        <h1 *ngSwitchCase=6>It's Saturday</h1>
+        <h1>Reserve Your <span>Table</span> & Order Your <span>Meal</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="buttons">
+          <button class="btn btn-reserve">Reserve Table</button>
+          <button class="btn btn-order">Order Food</button>
+        </div>
+      </div>
+      <div class="image-content">
+        <img src="https://i.pinimg.com/474x/58/a5/a2/58a5a26bafb4063a451837dcfdb0399d.jpg" alt="Girl with food">
+      </div>
+    </main>
+    <form (ngSubmit)="onProduct()" class="w-50 mx-auto px-4 py-3 shadow" enctype="multipart/form-data">
+      <h2>Create Product</h2>
+      <div>
+          <label for="">Product Name</label>
+          <input [(ngModel)]="products.product_name" class="form-control my-2"   type="text" name="product_name">
+      </div>
+      <div>
+          <label for="">Product Price</label>
+          <input [(ngModel)]="products.product_price" class="form-control my-2"   type="text" name="product_price">
+      </div>
+      <div>
+          <label for="">Product Catagory</label>
+          <select [(ngModel)]="products.product_category" class="form-control my-2"   name="product_category" id="">
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+          </select>
+      </div>
+      <div>
+          <label for="">Product Description</label>
+          <textarea [(ngModel)]="products.product_description" class="form-control my-2"   name="product_description" cols="30" rows="10" id=""></textarea>
+      </div>
+      <div>
+          <label for="">In Stock</label>
+          <input [(ngModel)]="products.in_stock" class="form-control my-2"   type="text" name="in_stock">
+      </div>
+      <div>
+        <input type="file" (change)="onFileChange($event)" name="product_img">
+      </div>
+      <div>
+          <button type="submit" class="btn btn-success">Create Product</button>
+      </div>
+      <p *ngIf="message">{{ message }}</p>
+  </form>
+    <div style="display: flex; align-items: center; flex-direction: column;" class="dishes-container">
+      <h3 style="margin-top: 30px;">Available products</h3>
+    </div>
+    <div class="dishes-container" >
+      <div *ngFor="let dishes of fetchedProducts let i=index" class="dish-card">
+        <img src="http://localhost/php/admin/{{dishes.product_img}}" alt="">
+          <div class="card-content">
+              <h2>{{dishes.product_name}}</h2>
+              <span class="price">${{dishes.product_price}}</span>
+              <p>{{dishes.product_category}}</p>
+              <p>{{dishes.product_desc}}</p>
+              <p>{{dishes.in_stock}}</p>
+            
+          </div>
+      </div>
+  </div>
+    <section class="popular-dishes">
+        <h1>Popular Dishes</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        </p>
+        <!-- <div class="dishes-container">
+            <div *ngFor="let food of productItems, let i=index" class="dish-card">
+                <img src={{food.images}} alt="Burger">
+                <div class="card-content">
+                    <h2>{{food.title}}</h2>
+                    <span class="price">${{food.price}}</span>
+                    <p>{{food.description}}</p>
+                    <button>ORDER NOW</button>
+                    <a href="/oneuser/{{food.id}}">View user</a>
+
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+  </div>

@@ -1,0 +1,25 @@
+<div class="bigContainer">
+   <div class="big1">
+    <img class="image1" src="https://media.dev.to/cdn-cgi/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="">
+    <div class="searchBox">
+        <input type="text" placeholder="Search">
+        <p class="alt">Poweredby &#64;Algolia</p>
+    </div>
+   </div>
+
+    <div class="buttons">
+        <button class="btn1"><p>
+            <a routerLink="login">Log in</a>
+            </button>
+           
+        <button class="btn2">
+            <a routerLink="signup">Create user</a>
+        </button>
+        <div *ngIf="currentUser!== null">
+            <button (click)="logout()">Log out</button>
+        </div>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,37 @@
+<form class="w-50 px-4 py-4 shadow mx-auto mt-5" action="" *ngIf="!displayTodo">
+    <h1 class="text-center text-muted mt-3">Todo List</h1>
+    <input [(ngModel)]="name" class="form-control" type="text" name="name" placeholder="Name">
+    <input [(ngModel)]="description" class="form-control mt-3" name="description" type="text" placeholder="Description">
+    <button (click)="add_todo()" class="btn btn-dark mt-3">Add Todo</button>
+</form>
+
+<table class="table mt-3"  >
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Time & Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todoArray; let i =index">
+            <td>{{i+1}}</td>
+            <td>{{todo.name}}</td>
+            <td>{{todo.description}}</td>
+            <td>{{todo.timestamp}}</td>
+            <td>
+                <button (click)="edit_todo(i)" class="btn btn-warning">Edit</button>
+                <button (click)="delete_todo(i)" class="btn btn-dark">Delete</button>
+            </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form class="w-50 px-4 py-4 shadow mx-auto mt-5" action="" *ngIf="displayTodo">
+    <h1 class="text-center text-muted mt-3">Edit Todo List</h1>
+    <input [(ngModel)]="todoEdit.name" class="form-control" type="text" name="name" placeholder="Name">
+    <input [(ngModel)]="todoEdit.description" class="form-control mt-3" name="description" type="text" placeholder="Description">
+    <button (click)="save_edit()" class="btn btn-dark mt-3">Save edit</button>
+</form>
