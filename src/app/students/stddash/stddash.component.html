@@ -15,7 +15,16 @@
     </header>
     <div *ngIf="isVisible" class="cart-container">
       <div *ngIf="cart.length > 0; else emptyCart">
-        <h1>Your Cart</h1>
+        <div class="yourCart">
+          <h1>Your Cart</h1>
+          <button (click)="makepayment()" class="pay-button">Pay</button>
+        </div>
+        <div class="displayCart1">
+          <p>Total</p>
+          <p>
+            <span>₦</span>{{this.total}}</p>
+         
+        </div>
         <ul>
           <li *ngFor="let i of cart let ind = index">
             <div class="displayCart">
@@ -50,7 +59,10 @@
         <h1>Reserve Your <span>Table</span> & Order Your <span>Meal</span></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <div class="buttons">
-          <button class="btn btn-reserve">Reserve Table</button>
+          
+          <button class="btn btn-reserve">
+            <a href="https://checkout.paystack.com/3wno0xrdztyea2g"> Reserve Table</a>
+           </button>
           <button class="btn btn-order">Order Food</button>
         </div>
       </div>
@@ -69,6 +81,7 @@
                     <h2>{{dishes.product_name}}</h2>
                     <span class="price">${{dishes.product_price}}</span>
                     <p>{{dishes.product_desc}}</p>
+                    <p *ngIf="message">{{ message }}</p>
                     <button (click)="addTOCart(dishes)" [disabled]="dishes.addedToCart">{{dishes.addedToCart ? 'Added' : 'Add to cart'}}</button>
                   
                 </div>

@@ -37,6 +37,7 @@ sighin(){
           this.message =response.message;
           localStorage.setItem("The token", response.token);
           localStorage.setItem("The email", response.email);
+          localStorage.setItem("The id", response.id);
           this.router.navigate(['studentdash'])  
         }else{
           this.message ="Unexpected response from the server"

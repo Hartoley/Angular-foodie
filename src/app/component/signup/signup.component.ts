@@ -14,7 +14,6 @@ import { routes } from '../../app.routes';
 })
 export class SignupComponent {
   constructor(public router: Router, public http: HttpClient) {}
-
   public allUsers: any = [];
   public users: any = {
     first_name: "",

@@ -351,3 +351,22 @@ button.delete-button:hover {
   justify-content: space-between;
   width: 100%;
 }
+
+.displayCart1{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  background-color: white;
+}
+
+.yourCart{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-button{
+  width: 100px;
+  height: 40%;
+}

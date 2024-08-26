@@ -16,12 +16,16 @@ export class StddashComponent {
   public toDelete:any = [];
   public newQ: Number = 1;
   public userinfo:any;
+  public prices:any;
+  public qty:any;
+  public total:any;
   public productss:any;
   public productItems: any = [];
   isVisible: boolean = false ;
   public cart: any = []
   public token:any;
   public email:any;
+  public id:any;
   productsList: any[] = [];
   products:any={
     product_name:"",
@@ -38,43 +42,76 @@ export class StddashComponent {
 
   ngOnInit(){
     this.token = localStorage.getItem('The token');
-    this.email = localStorage.getItem('The email')
+    this.email = localStorage.getItem('The email');
+    this.id = localStorage.getItem('The id')
+  
+    
+    
     if (!this.token) {
-      this.router.navigate(['login'])
+      this.router.navigate(['studentsignin'])
     }else{
-      // console.log('Token retrieved:', this.token);
       this.http.get('http://localhost/php/admin/display.php').subscribe((Allproducts:any)=>{
-        // console.log(Allproducts);
         this.fetchedProducts = Allproducts.map((i:any)=>({
           ...i,
           addedToCart: false,
           quantity: 0,
         }))
-        // console.log(this.fetchedProducts);
       
       })
 
-  
- 
-      this.http.get('https://dummyjson.com/products').subscribe((productInfo: any)=>{
-        console.log(productInfo);
-        this.productss = productInfo.products
-        this.productss.forEach((item:any)=>{
-        this.productItems.push(item)
-        })
-      })
+
     }
 
-    this.http.get('http://localhost/php/students/displaycart.php').subscribe((cart: any)=>{
-      // console.log(cart);
-      this.cart = cart
+ 
+    const Id = this.id
+
+    this.http.post("http://localhost/php/students/displaycart.php", { Id }, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).subscribe((response: any) => {
+      // console.log(Id);
       
-    })
+      console.log('Id sent successfully', response);
+      this.cart = response.data
+      let totalPrice = 0;
+
+    
+      for (const item of this.cart) {
+       
+        const productTotal = item.product_price * item.quantity;
+      
+        totalPrice += productTotal;
+      }
+  
+     
+      this.total = totalPrice;
+      console.log('Total price:', this.total);
+      console.log(this.cart);
+      
+    }, error => {
+      console.error('Error sending Id', error);
+    });
+
+    // this.http.get('http://localhost/php/students/displaycart.php?user_id=${Id}').subscribe((cart: any)=>{
+    //   console.log(cart);
+    //   this.cart = cart
+      
+      
+    // })
+
+   
   
  
   }
 
+
   addTOCart(i: any) {
+    if (!Array.isArray(this.cart)) {
+    
+      this.cart = [];
+    }
+  
     const itemInCart = this.cart.find((item: any) => item.id === i.id);
   
     if (itemInCart) {
@@ -84,14 +121,14 @@ export class StddashComponent {
       i.addedToCart = true;
       this.cart.push(i);
     }
-    // console.log('Updated item:', i);
-    // console.log('Current cart:', this.cart);
+
     const dataToSend = {
+      product_id : i.id,
       product_name: i.product_name,
       product_price: i.product_price,
-      quantity: i.quantity
+      quantity: i.quantity,
+      user_id: this.id,
     };
-    // alert(`${i.product_name} added to cart`);
     console.log(dataToSend);
     
     this.http.post("http://localhost/php/students/cart.php", dataToSend, {
@@ -99,7 +136,7 @@ export class StddashComponent {
         "Content-Type": "application/json"
       }
     }).subscribe((response: any) => {
-      
+      this.message = response.message;
       console.log('Cart updated successfully', response);
     }, error => {
       console.error('Error updating cart', error);
@@ -120,6 +157,8 @@ export class StddashComponent {
       cartItem.quantity = item.quantity;
     } else {
       this.cart.push(item);
+      console.log(this.cart);
+      
       
     }
     console.log('Cart after increase:', this.cart);
@@ -156,7 +195,8 @@ export class StddashComponent {
         "Content-Type": "application/json"
       }
     }).subscribe((response: any) => {
-      alert('Cart updated successfully')
+      this.message = response.message;
+       alert('Cart updated successfully')
       console.log('Cart updated successfully', response);
     }, error => {
       console.error('Error updating cart', error);
@@ -227,6 +267,27 @@ onFileChange(event: any) {
 
   toggleVisibility() {
     this.isVisible = !this.isVisible;
+  }
+
+  makepayment(){
+    const dataToSend = {
+      Id: this.id,
+      total: this.total
+      
+    };
+
+    this.http.post("http://localhost/php/students/payment.php", dataToSend, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).subscribe((response: any) => {
+      console.log(response);
+      window.location.href = `https://checkout.paystack.com/69a828vrwl2z2xb`;
+      
+      
+      
+  
+    });
   }
 
   
