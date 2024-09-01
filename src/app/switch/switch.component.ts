@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AllUserService } from '../service/all-user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CounterserviceService } from '../counterservice.service';
 
 @Component({
   selector: 'app-switch',
@@ -12,7 +13,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class SwitchComponent {
   public date = new Date().getDay();
-  constructor(public allUser: AllUserService, public http:HttpClient){} 
+  public counter:number=0
+  constructor(public allUser: AllUserService, public http:HttpClient, public counterService: CounterserviceService){
+    this.counterService.counter.subscribe(val=>{
+      this.counter = val
+    })
+  } 
   public allUserData = this.allUser.allUsers()
   public fetchedInfo:any;
   ngOnInit(){
@@ -29,6 +35,14 @@ export class SwitchComponent {
 
    
     
+  }
+
+  addup(){
+    this.counterService.increase()
+  }
+
+  minus(){
+    this.counterService.decrease()
   }
 
   fetchOneuser(){

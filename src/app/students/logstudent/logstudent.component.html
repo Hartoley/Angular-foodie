@@ -1,6 +1,4 @@
-<h2>Your login</h2>
 <form action="" class="w-50 mx-auto px-4 py-3 shadow">
-
     <div class="my-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" [(ngModel)]="logged.email" name="email" class="form-control" aria-describedby="emailHelp">
@@ -10,5 +8,5 @@
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" class="form-control" [(ngModel)]="logged.password" name="password">
     </div>
-    <button (click)="sighin()" class="btn btn-success">Submit</button>
+    <button (click)="sighin()" class="btn btn-primary">Submit</button>
   </form>

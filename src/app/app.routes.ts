@@ -29,5 +29,7 @@ export const routes: Routes = [
     {path:'material', component:TestmodeComponent},
     {path:'studentsignup', component:StdsignupComponent},
     {path:'studentsignin', component:LogstudentComponent},
-    {path:'studentdash', component:StddashComponent}
+    {path:'studentdash', component:StddashComponent},
+
+
 ];
