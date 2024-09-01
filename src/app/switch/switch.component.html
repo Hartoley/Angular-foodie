@@ -1,4 +1,6 @@
-
+<h1>{{counter}}</h1>
+<button (click)="addup()">Add up</button>
+<button (click)="minus()">Deduct</button>
 <div [ngSwitch]="date">
     <div *ngSwitchCase= 0>Today is Sunday, you deserve a break </div>
     <div *ngSwitchCase= 1>Today is Monday, work starts </div>

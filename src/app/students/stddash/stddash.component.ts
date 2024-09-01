@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FooterComponent } from '../../component/footer/footer.component';
 
 @Component({
   selector: 'app-stddash',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, FooterComponent],
   templateUrl: './stddash.component.html',
   styleUrl: './stddash.component.css'
 })
@@ -275,15 +277,18 @@ onFileChange(event: any) {
       total: this.total
       
     };
+    const paystackSecretKey = 'sk_test_1bc61b4143f3f54c3f52f5c24d92ce168d89bf3c';
 
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer sk_test_1bc61b4143f3f54c3f52f5c24d92ce168d89bf3c',
+      'Content-Type': 'application/json'
+    });
     this.http.post("http://localhost/php/students/payment.php", dataToSend, {
       headers: {
         "Content-Type": "application/json"
       }
     }).subscribe((response: any) => {
       console.log(response);
-      window.location.href = `https://checkout.paystack.com/69a828vrwl2z2xb`;
-      
       
       
   
