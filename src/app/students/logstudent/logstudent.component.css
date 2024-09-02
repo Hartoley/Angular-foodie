@@ -1,0 +1,133 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  .logo-img{
+    width: 20px;
+    height: auto;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .login-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    width: 90%;
+  }
+  
+  .login-left {
+    background: url('https://i.pinimg.com/564x/71/f8/dd/71f8dd52a02a233c46f1ab4d88d22f7a.jpg') no-repeat center center;
+    background-size: cover;
+    flex: 1;
+    padding: 30px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .sign-in-options p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .social-icons a img {
+    width: 40px;
+    margin: 0 10px;
+  }
+  
+  .login-right {
+    flex: 1;
+    padding: 50px;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .form-container {
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff416c;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff4b2b;
+  }
+  
+  .extra-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .extra-options a {
+    color: #ff416c;
+    text-decoration: none;
+  }
+  
+  .extra-options a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .login-card {
+      flex-direction: column;
+    }
+  
+    .login-left {
+      height: 250px;
+    }
+  }
+  
