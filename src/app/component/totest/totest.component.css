@@ -14,7 +14,7 @@
     color: #f9f5f5;
   }
 
-  .row{
+  #row{
     justify-content: space-evenly;
   }
   
@@ -27,8 +27,8 @@
   }
 
   .contained img{
-    width: 60%;
-    height: 20vw;
+    width: 30vw;
+    height: 30vw;
   }
   
   .features {

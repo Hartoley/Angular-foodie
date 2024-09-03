@@ -62,21 +62,21 @@ nav ul li a {
 }
 
 nav ul li .home {
-  color: #A52A2A;
+  color: #ff416c;
 }
 
 nav ul li a:hover {
-  color: #A52A2A;
+  color: #ff416c;
 }
 
 .material-icons {
   cursor: pointer;
-  color: #A52A2A;
+  color: #ff416c;
   transition: color 0.3s;
 }
 
 .material-icons:hover {
-  color: #8B1C1C;
+  color: #ff416c;
 }
 
 /* Hero Section */
@@ -99,7 +99,7 @@ nav ul li a:hover {
 }
 
 .text-content h1 span {
-  color: #A52A2A;
+  color: #ff416c;
 }
 
 .text-content p {
@@ -125,12 +125,12 @@ nav ul li a:hover {
 }
 
 .btn-reserve {
-  background-color: #A52A2A;
+  background-color: #ff416c;
   color: #fff;
 }
 
 .btn-reserve:hover {
-  background-color: #8B1C1C;
+  background-color: #ff416c;
 }
 
 .btn-order {
@@ -143,7 +143,8 @@ nav ul li a:hover {
 }
 
 .image-content img {
-  height: 500px;
+  width: 40vw;
+  height: 50vw;
   border-radius: 20px;
   margin-left: 50px;
 }
@@ -213,7 +214,7 @@ nav ul li a:hover {
 }
 
 .dish-card .price {
-  color: #b12704;
+  color: #ff416c;
   font-size: 1.2em;
   margin-bottom: 10px;
   display: block;
@@ -228,7 +229,7 @@ nav ul li a:hover {
 }
 
 .dish-card button {
-  background: #b12704;
+  background: #ff416c;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -240,7 +241,7 @@ nav ul li a:hover {
 }
 
 .dish-card button:hover {
-  background: #a12704;
+  background: #ff416c;
 }
 
 /* General Cart Container Styling */
@@ -265,7 +266,7 @@ nav ul li a:hover {
 }
 
 .yourCart h1 {
-  color: #A52A2A;
+  color: #ff416c;
   font-weight: bold;
   font-size: 1.8em;
 }
@@ -276,7 +277,7 @@ nav ul li a:hover {
 }
 
 .pay-button {
-  background-color: #A52A2A;
+  background-color: #ff416c;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -286,7 +287,7 @@ nav ul li a:hover {
 }
 
 .pay-button:hover {
-  background-color: #8B1C1C;
+  background-color: #ff416c;
 }
 
 /* Displaying Total and Items */
@@ -349,7 +350,7 @@ nav ul li a:hover {
 
 /* Icon Button Styling */
 .icon-button {
-  background-color: #A52A2A;
+  background-color: #ff416c;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -363,14 +364,14 @@ nav ul li a:hover {
 }
 
 .icon-button:hover {
-  background-color: #8B1C1C;
+  background-color: #ff416c;
 }
 
 /* Delete Button Styling */
 .delete-button {
   background-color: transparent;
-  color: #A52A2A;
-  border: 1px solid #A52A2A;
+  color: #ff416c;
+  border: 1px solid #ff416c;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -379,14 +380,14 @@ nav ul li a:hover {
 }
 
 .delete-button:hover {
-  background-color: #A52A2A;
+  background-color: #ff416c;
   color: #fff;
 }
 
 /* Empty Cart Message Styling */
 .empty-cart {
   text-align: center;
-  color: #A52A2A;
+  color: #ff416c;
   font-weight: bold;
   font-size: 1.2em;
   padding: 20px;
@@ -425,7 +426,7 @@ nav ul li a:hover {
 }
 
 .icon-button {
-  background-color: #A52A2A;
+  background-color: #ff416c;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -440,13 +441,13 @@ nav ul li a:hover {
 }
 
 .icon-button:hover {
-  background-color: #8B1C1C;
+  background-color: #ff416c;
 }
 
 button.delete-button {
   background-color: transparent;
-  color: #A52A2A;
-  border: 2px solid #A52A2A;
+  color: #ff416c;
+  border: 2px solid #ff416c;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -454,7 +455,7 @@ button.delete-button {
 }
 
 button.delete-button:hover {
-  background-color: #A52A2A;
+  background-color: #ff416c;
   color: #fff;
 }
 
@@ -466,7 +467,7 @@ button.delete-button:hover {
 
 .empty-cart {
   text-align: center;
-  color: #A52A2A;
+  color: #ff416c;
   font-weight: bold;
 }
 
@@ -479,7 +480,7 @@ app-footer {
 }
 
 app-footer a {
-  color: #A52A2A;
+  color: #ff416c;
   text-decoration: none;
 }
 

@@ -5,9 +5,15 @@ body, html {
     font-family: Arial, sans-serif;
   }
 
+  #logo-img{
+    width: 4.5vw;
+    margin-left: -17vw;
+  }
+
   .logo-img{
-    width: 20px;
+    /* width: 1.5vw; */
     height: auto;
+    
   }
   
   .login-container {
@@ -15,7 +21,7 @@ body, html {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #ff416c, #ff4b2b);
-    height: 100vh;
+    height: 90.5vh;
     width: 100%;
   }
   
@@ -40,6 +46,16 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+
+  #tweet{
+    width: 1.9vw;
+    height: auto;
+  }
+
+  #tweet1{
+    width: 1.5vw;
+    height: auto;
   }
   
   .brand-logo img {
