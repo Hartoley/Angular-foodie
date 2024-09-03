@@ -6,11 +6,6 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-.container {
-  flex: 1;
-}
-
-
 /* Container */
 .container {
   width: 100vw;
@@ -19,7 +14,7 @@ body, html {
   background-color: #1c1c1c;
 }
 
-/* Header */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -34,7 +29,7 @@ header {
 
 nav {
   flex: 1;
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
 
 nav ul {
@@ -251,6 +246,11 @@ nav ul li a:hover {
   color: #A52A2A;
   font-weight: bold;
   font-size: 1.8em;
+}
+
+#img1{
+  width: 33vw;
+  height: auto;
 }
 
 .pay-button {
