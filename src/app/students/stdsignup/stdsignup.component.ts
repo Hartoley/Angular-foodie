@@ -22,6 +22,11 @@ export class StdsignupComponent {
   };
 
   message: string = '';
+  hidePassword = true;
+
+  togglePassword() {
+    this.hidePassword = !this.hidePassword;
+  }
 
   ngOnInit() {
     this.http.get('http://localhost/php/user.php').subscribe((users: any) => {

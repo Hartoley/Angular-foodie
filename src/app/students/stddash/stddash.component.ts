@@ -4,11 +4,12 @@ import { HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FooterComponent } from '../../component/footer/footer.component';
+import { TotestComponent } from '../../component/totest/totest.component';
 
 @Component({
   selector: 'app-stddash',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FooterComponent],
+  imports: [CommonModule, HttpClientModule, FooterComponent, TotestComponent],
   templateUrl: './stddash.component.html',
   styleUrl: './stddash.component.css'
 })
