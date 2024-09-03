@@ -182,18 +182,18 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  width: 250px;
+  width: 10vw;
   color: #f5efef;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between;  /* Ensures content is evenly distributed */
-  height: 38vw;  /* Increased height for uniformity */
+  height: 40vw;  /* Increased height for uniformity */
 }
 
 .dish-card img {
   width: 100%;
-  height: 200px; /* Increased height for images to make them taller */
+  height: 80px; /* Increased height for images to make them taller */
   object-fit: cover; /* Ensures image covers the area without distortion */
   display: block;
 }

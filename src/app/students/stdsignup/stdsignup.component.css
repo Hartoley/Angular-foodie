@@ -2,21 +2,16 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* background-color: #cb1616; */
     font-family: Arial, sans-serif;
-  }
-
-  body{
-    background-color: #1c0e29;
   }
   
   .signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #290e0e, #060505);
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
     height: 100vh;
-    width: 130%;
+    width: 100%;
   }
   
   .signup-card {
