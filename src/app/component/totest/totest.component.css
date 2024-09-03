@@ -1,11 +1,13 @@
 .menu-section {
-    background-color: #f2f2f2;
+    background-color: #111; /* Dark background */
+    color: #fff;
     padding: 20px;
   }
   
   .menu-section h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #fff; /* White text for better contrast */
   }
   
   .menu-items {
@@ -18,9 +20,10 @@
     width: 300px;
     text-align: center;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #333; /* Darker border */
     border-radius: 5px;
     margin-bottom: 20px;
+    background-color: #222; /* Darker background for menu items */
   }
   
   .menu-item img {
@@ -30,15 +33,15 @@
   
   .menu-item h3 {
     margin-top: 10px;
+    color: #fff; /* White text */
   }
   
   .menu-item p {
     margin-bottom: 10px;
+    color: #ccc; /* Lighter gray text for description */
   }
   
   .menu-item .price {
     font-weight: bold;
+    color: #fff; /* White text for price */
   }
-
-
-  

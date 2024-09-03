@@ -1,4 +1,4 @@
-<div class="container">
+<div class="contained">
     <header>
       <img src="https://dcassetcdn.com/design_img/4001448/784504/28494866/5x5b49c6fbhcznq8nv1qgsr1zm_thumbnail.png" alt="Logo" class="logo">
       <nav>
@@ -26,8 +26,6 @@
             <span>₦</span>{{this.total}}</p>
          
         </div>
-
-       
         <ul>
           <li *ngFor="let i of cart let ind = index">
             <div class="displayCart">
@@ -49,7 +47,7 @@
         <p class="empty-cart">You've not added any product to cart</p>
       </ng-template>
     </div>
-     <app-totest></app-totest>
+  <app-totest></app-totest>
     <main class="hero-section">
       <div [ngSwitch]="date" class="text-content">
         <h1 *ngSwitchCase=0>It's Sunday</h1>
