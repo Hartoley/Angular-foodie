@@ -183,7 +183,7 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  width: 10vw;
+  width: 15vw;
   color: #f5efef;
   text-align: left;
   display: flex;
@@ -194,10 +194,15 @@ nav ul li a:hover {
 
 .dish-card img {
   width: 100%;
-  height: 80px; /* Increased height for images to make them taller */
+  height: 160px; /* Increased height for images to make them taller */
   object-fit: cover; /* Ensures image covers the area without distortion */
   display: block;
 }
+.dish-card h2{
+  line-height: 35px;
+  height: 5vw;
+}
+
 
 .dish-card .card-content {
   padding: 20px;
@@ -236,7 +241,7 @@ nav ul li a:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
-  align-self: flex-start;  /* Aligns button to the left within the card */
+  align-self: flex-start;  
   margin-top: auto;  /* Pushes button to the bottom */
 }
 
