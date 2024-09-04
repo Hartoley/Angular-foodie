@@ -1,3 +1,115 @@
-h1{
-    color: red;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
+
+.top-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.video-banner {
+    position: relative;
+    height: 400px;
+    background-image: url('https://i.pinimg.com/474x/3c/0f/63/3c0f636adf72984ac7eb54ce4d4bab1d.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.content{
+    display: flex;
+    gap: 4vw;
+}
+
+.content img{
+    width: 40%;
+    height: auto;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.play-button {
+    font-size: 50px;
+    border: none;
+    background: none;
+    color: yellow;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.middle-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.mobile-image {
+    width: 40%;
+    max-width: 300px;
+}
+
+.info {
+    color: white;
+}
+
+.features {
+    margin-top: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feature .icon {
+    margin-right: 10px;
+}
+
+.download-buttons {
+    margin-top: 20px;
+}
+
+.download-buttons a {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.bottom-section {
+    text-align: center;
+    color: white;
+}
+
+.reviews {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review {
+    width: 30%;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.reviewer-info {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
