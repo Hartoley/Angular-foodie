@@ -218,3 +218,151 @@
     font-weight: bold;
 }
 
+
+ /* Global Styles */
+ .section {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+  }
+  
+  /* Video Section */
+  .video-section {
+    background-image: url('https://i.pinimg.com/474x/d1/d8/9a/d1d89a6e2f35ecee670c6041693fa082.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .video-overlay {
+    text-align: center;
+  }
+  
+  .play-button {
+    /* background: url('../../assets/images/56b0c0689c103428ada830080eb789f0-removebg-preview.png') no-repeat center center; */
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+  }
+  
+  .video-overlay h2 {
+    margin: 20px 0;
+    font-size: 32px;
+    color: #fff;
+  }
+  
+  .video-overlay p {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  /* Order Section */
+  .order-section {
+    background-color: #111;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .phone-image {
+    width: 300px;
+    height: auto;
+  }
+  
+  .order-details {
+    max-width: 600px;
+    margin-left: 50px;
+  }
+  
+  .order-details h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .order-details p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .order-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-details ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .app-buttons img {
+    width: 150px;
+    margin-right: 10px;
+  }
+  
+  /* Customer Review Section */
+  .customer-review {
+    background-color: #222;
+    padding: 50px 0;
+  }
+  
+  .customer-review h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+  
+  .review-grid {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .review-card {
+    background-color: #333;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .review-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .review-card p {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .review-card h4 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .review-card span {
+    font-size: 14px;
+    color: #777;
+  }
+  
+    
+    
