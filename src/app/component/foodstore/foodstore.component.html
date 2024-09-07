@@ -32,7 +32,7 @@
         <img src="https://i.pinimg.com/474x/58/a5/a2/58a5a26bafb4063a451837dcfdb0399d.jpg" alt="Girl with food">
       </div>
     </main>
-    <form (ngSubmit)="onProduct()" class="w-50 mx-auto px-4 py-3 shadow" enctype="multipart/form-data">
+    <form (ngSubmit)="onProduct()" *ngIf="!updating" class="w-50 mx-auto px-4 py-3 shadow" enctype="multipart/form-data">
       <h2>Create Product</h2>
       <div>
           <label for="">Product Name</label>
@@ -66,6 +66,52 @@
       </div>
       <p *ngIf="message">{{ message }}</p>
   </form>
+  <form *ngIf="updating"(ngSubmit)="updating" class="w-50 mx-auto px-4 py-3 shadow" enctype="multipart/form-data">
+    <h2>{{ updating ? 'Update Product' : 'Create Product' }}</h2>
+  
+    <div>
+        <label for="product_name">Product Name</label>
+        <input [(ngModel)]="udatedProduct.product_name" class="form-control my-2" type="text" name="product_name">
+    </div>
+  
+    <div>
+        <label for="product_price">Product Price</label>
+        <input [(ngModel)]="udatedProduct.product_price" class="form-control my-2" type="text" name="product_price">
+    </div>
+  
+    <div>
+        <label for="product_category">Product Category</label>
+        <select [(ngModel)]="udatedProduct.product_category" class="form-control my-2" name="product_category">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+    </div>
+  
+    <div>
+        <label for="product_description">Product Description</label>
+        <textarea [(ngModel)]="udatedProduct.product_description" class="form-control my-2" name="product_description" cols="30" rows="10"></textarea>
+    </div>
+  
+    <div>
+        <label for="in_stock">In Stock</label>
+        <input [(ngModel)]="udatedProduct.in_stock" class="form-control my-2" type="text" name="in_stock">
+    </div>
+  
+    <div>
+        <input type="file" (change)="onFileChange($event)" name="product_img">
+        <p *ngIf="updating && udatedProduct.product_img">Current image: {{ udatedProduct.product_img }}</p>
+    </div>
+  
+    <div>
+        <button (click)="updateProduct(udatedProduct.id)" class="btn btn-success">{{ updating ? 'Update Product' : 'Create Product' }}</button>
+        <button *ngIf="updating" type="button" (click)="cancelUpdate()" class="btn btn-secondary">Cancel</button>
+    </div>
+  
+    <p *ngIf="message">{{ message }}</p>
+  </form>
+  
+
     <div style="display: flex; align-items: center; flex-direction: column;" class="dishes-container">
       <h3 style="margin-top: 30px;">Available products</h3>
     </div>
@@ -78,7 +124,8 @@
               <p>{{dishes.product_category}}</p>
               <p>{{dishes.product_desc}}</p>
               <p>{{dishes.in_stock}}</p>
-            
+            <button (click)="edit(dishes)">Edit</button>
+            <button (click)="delete(dishes)">Delete</button>
           </div>
       </div>
   </div>

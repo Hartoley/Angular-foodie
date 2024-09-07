@@ -19,7 +19,17 @@ export class FoodstoreComponent {
   public productss: any;
   public productItems: any = [];
   public token: any;
+  public updating: Boolean =false;
   public email: any;
+  public index:any;
+  public udatedProduct: any ={
+    product_name: "",
+    product_price: "",
+    product_category: "",
+    product_description: "",
+    in_stock: "",
+    product_img: null 
+  };
   productsList: any[] = [];
   products: any = {
     product_name: "",
@@ -29,6 +39,7 @@ export class FoodstoreComponent {
     in_stock: "",
     product_img: null 
   };
+  
   message: string = '';
   public fetchedProducts: any;
 
@@ -46,13 +57,13 @@ export class FoodstoreComponent {
         
       });
       console.log(this.email);
-      this.http.get('https://dummyjson.com/products').subscribe((productInfo: any) => {
-        console.log(productInfo);
-        this.productss = productInfo.products;
-        this.productss.forEach((item: any) => {
-          this.productItems.push(item);
-        });
-      });
+      // this.http.get('https://dummyjson.com/products').subscribe((productInfo: any) => {
+      //   console.log(productInfo);
+      //   this.productss = productInfo.products;
+      //   this.productss.forEach((item: any) => {
+      //     this.productItems.push(item);
+      //   });
+      // });
     }
   }
 
@@ -99,7 +110,112 @@ export class FoodstoreComponent {
   onFileChange(event: any) {
     const file = event.target.files[0];
     if (file) {
-      this.products.product_img = file; 
+      if (this.updating) {
+        this.udatedProduct.product_img = file;
+      } else {
+        this.products.product_img = file;
+      }
     }
   }
+  
+
+  edit(product: any) {
+    this.updating = true;
+    this.udatedProduct = { ...product }; 
+  }
+
+  cancelUpdate() {
+    this.updating = false;
+    this.udatedProduct = {
+      product_name: "",
+      product_price: "",
+      product_category: "",
+      product_description: "",
+      in_stock: "",
+      product_img: null
+    };
+  
+  }
+
+  
+ 
+  updateProduct(i:any) {
+    if (!this.udatedProduct.id) {
+      console.error('Product ID is missing');
+      return;
+    }
+  
+    const formData = new FormData();
+    formData.append('id', this.udatedProduct.id);
+    formData.append('product_name', this.udatedProduct.product_name);
+    formData.append('product_price', this.udatedProduct.product_price);
+    formData.append('product_category', this.udatedProduct.product_category);
+    formData.append('product_description', this.udatedProduct.product_description);
+    formData.append('in_stock', this.udatedProduct.in_stock);
+  
+    if (this.udatedProduct.product_img) {
+      formData.append('product_img', this.udatedProduct.product_img);
+    }
+
+    if (!Array.isArray(this.fetchedProducts)) {
+      console.error('Fetched Products is not an array');
+      return;
+    }
+    
+    if (!this.udatedProduct || !this.udatedProduct.id) {
+      console.error('Updated Product or Product ID is missing');
+      return;
+    }
+    
+    console.log('Fetched Products:', this.fetchedProducts);
+    console.log('Updated Product:', this.udatedProduct);
+  
+    this.http.post("http://localhost/php/admin/editProduct.php", formData)
+      .subscribe({
+        next: (response: any) => {
+          if (response.message === 'Product updated successfully') {
+            alert('Product updated successfully');
+            // this.fetchedProducts = this.fetchedProducts.map(product =>
+            //   product.id === this.udatedProduct.id ? this.udatedProduct : product
+            // );
+          } else {
+            alert(response.message);
+          }
+        },
+        error: (error) => {
+          console.error('Error updating product', error);
+          alert('Error updating product');
+        }
+      });
+  }
+  
+  
+  delete(i: any) {
+    const itemInCart = this.fetchedProducts.find((item: any) => item.id === i.id);
+  
+    if (!itemInCart) {
+      console.error('Product not found');
+      return;
+    }
+  
+    this.http.post("http://localhost/php/admin/deleteProduct.php", { items: itemInCart.id }, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).subscribe((response: any) => {
+      if (response.message === 'Product deleted successfully') {
+        alert('Item deleted successfully');
+        console.log('Item deleted successfully', response);
+        
+        this.fetchedProducts = this.fetchedProducts.filter((item: any) => item.id !== itemInCart.id);
+      } else {
+        console.error('Error:', response.message);
+        alert(response.message);
+      }
+    }, error => {
+      console.error('Error deleting product', error);
+    });
+  }
+  
+
 }
