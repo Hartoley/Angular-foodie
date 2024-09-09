@@ -42,9 +42,18 @@
     border: none;
     background: none;
     color: yellow;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
+    width: 4vw;
+    height: 4vw;
 }
+
+.play-button img{
+  width: 100%;
+  height: auto;
+}
+
+
 
 .middle-section {
     display: flex;
@@ -311,7 +320,8 @@
   }
   
   .app-buttons img {
-    width: 150px;
+    width: 40px;
+    height: 50px;
     margin-right: 10px;
   }
   

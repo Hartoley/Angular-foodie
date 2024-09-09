@@ -41,6 +41,7 @@ export class StddashComponent {
   }
   message: string = '';
   public fetchedProducts:any;
+  public paymentSuccessful:Boolean =false
  
  
 
@@ -276,25 +277,34 @@ onFileChange(event: any) {
   makepayment(){
     const dataToSend = {
       Id: this.id,
-      total: this.total
+      total: this.total,
+      email:this.email
       
     };
-    const paystackSecretKey = 'sk_test_1bc61b4143f3f54c3f52f5c24d92ce168d89bf3c';
 
-    const headers = new HttpHeaders({
-      'Authorization': 'Bearer sk_test_1bc61b4143f3f54c3f52f5c24d92ce168d89bf3c',
-      'Content-Type': 'application/json'
-    });
     this.http.post("http://localhost/php/students/payment.php", dataToSend, {
       headers: {
         "Content-Type": "application/json"
       }
     }).subscribe((response: any) => {
       console.log(response);
-      
-      
-  
+      if (response) {
+        window.open(response)
+
+      }
+
     });
+
+
+      this.http.post("http://localhost/php/students/clearCart.php", dataToSend, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).subscribe((response: any) => {
+        console.log(response);
+  
+      });
+
   }
 
   
