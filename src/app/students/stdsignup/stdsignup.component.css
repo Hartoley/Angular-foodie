@@ -42,6 +42,20 @@ body, html {
     justify-content: center;
     align-items: center;
   }
+
+  .password-container {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #000; 
+  }
+  
   
   .brand-logo img {
     width: 150px;
@@ -118,6 +132,10 @@ body, html {
   
     .signup-left {
       height: 250px;
+    }
+
+    .signup-container{
+      height: 94%;
     }
 
    

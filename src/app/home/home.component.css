@@ -85,7 +85,7 @@
     margin-right: 10px;
 }
 
-.download-buttons {
+.download-buttons{
     margin-top: 20px;
 }
 
@@ -374,5 +374,9 @@
     color: #777;
   }
   
-    
+  @media (min-width: 769px){
+    app-buttons img{
+      display: none;
+    }
+  }
     

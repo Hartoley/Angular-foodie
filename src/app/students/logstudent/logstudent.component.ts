@@ -15,12 +15,18 @@ export class LogstudentComponent {
 constructor(public router:Router, public http:HttpClient ){}
 public Users: any[] = JSON.parse(localStorage.getItem('newUsers')!) ||[]
 public allUsers:any
+public hidePassword = true;
+isPasswordVisible = false; 
 public loggedInUsers:Array <{password: string, email: string}>=[]
 public logged : any ={
 
 }
 
 message: string = '';
+
+togglePassword() {
+  this.hidePassword = !this.hidePassword;
+}
 
 sighin(){
   if (this.logged.email && this.logged.password) {

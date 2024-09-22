@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class StdsignupComponent {
   constructor(public router: Router, public http:HttpClient ){}
   public allUsers: any = [];
+  public hidePassword = true;
   public users: any = {
     first_name: "",
     last_name: "",
@@ -21,8 +22,10 @@ export class StdsignupComponent {
     password: "",
   };
 
+  
+
   message: string = '';
-  hidePassword = true;
+  
 
   togglePassword() {
     this.hidePassword = !this.hidePassword;

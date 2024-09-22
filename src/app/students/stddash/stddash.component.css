@@ -492,3 +492,69 @@ app-footer a {
 app-footer a:hover {
   color: #fff;
 }
+
+
+/* General Navigation Styles */
+nav {
+  flex: 1;
+  /* margin-left: 50px; */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0; /* Remove padding */
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f5efef;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Responsive Styles for Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack items vertically */
+    display: none; /* Initially hide on mobile */
+    width: 100%; /* Full width */
+    background-color: #1c1c1c; /* Background color for dropdown */
+    position: absolute; /* Positioning for dropdown */
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    z-index: 1000; /* Ensure it's on top */
+  }
+
+  nav ul.active {
+    display: flex; /* Show when active */
+  }
+
+  nav ul li {
+    padding: 10px; /* Add padding for touch targets */
+    text-align: center; /* Center align text */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon on mobile */
+    cursor: pointer; /* Change cursor */
+    color: #f5efef; /* Color of hamburger icon */
+  }
+
+
+  nav ul li {
+    display: block; 
+  }
+}
+
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; 
+  }
+}
