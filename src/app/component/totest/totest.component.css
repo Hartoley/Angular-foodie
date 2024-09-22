@@ -43,7 +43,7 @@
   
   .feature i {
     font-size: 24px;
-    color: #ff416c; /* Replace with your accent color */
+    color: #ff416c; 
   }
   
   .feature span {
@@ -78,7 +78,7 @@
   }
   
   .category {
-    padding: 5px; /* Reduced padding */
+    padding: 5px;
     text-align: center;
     color: #fff;
     border-radius: 8px;
@@ -108,11 +108,11 @@
   
   .category h3 {
     margin-bottom: 8px;
-    font-size: 1.4rem; /* Slightly smaller font size */
+    font-size: 1.4rem; 
   }
   
   .category p {
-    margin-bottom: 15px; /* Reduced margin */
+    margin-bottom: 15px; 
   }
   
   .category a {
@@ -120,7 +120,7 @@
     text-decoration: none;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 8px; /* Reduced padding */
+    padding: 8px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
   }
@@ -133,31 +133,31 @@
   .promo-offers {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0; /* Reduced margin */
+    margin: 30px 0; 
   }
   
   .promo-card {
     background-color: #333;
     color: #fff;
     border-radius: 8px;
-    padding: 15px; /* Reduced padding */
+    padding: 15px;
     width: 45%; /* Reduced width */
     position: relative;
   }
   
   .promo-card h4 {
     margin-bottom: 8px;
-    font-size: 0.9rem; /* Slightly smaller font size */
+    font-size: 0.9rem; 
     color: #ffc107;
   }
   
   .promo-card h3 {
-    margin-bottom: 15px; /* Reduced margin */
-    font-size: 1.3rem; /* Slightly smaller font size */
+    margin-bottom: 15px; 
+    font-size: 1.3rem; 
   }
   
   .promo-card p {
-    margin-bottom: 15px; /* Reduced margin */
+    margin-bottom: 15px; 
   }
   
   .promo-card a {
@@ -168,17 +168,17 @@
   
   .promo-card img {
     position: absolute;
-    right: 10px; /* Adjusted position */
-    bottom: 10px; /* Adjusted position */
-    max-height: 80px; /* Reduced image size */
+    right: 10px; 
+    bottom: 10px; 
+    max-height: 80px; 
   }
   
-  /* Main Feature */
+
   .main-feature {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0; /* Reduced padding */
+    padding: 40px 0; 
     background-color: #000;
     color: #fff;
   }
@@ -194,31 +194,31 @@
   
   .feature-text {
     flex: 1;
-    padding-left: 30px; /* Reduced padding */
+    padding-left: 30px;
   }
   
   .feature-text h2 {
     margin-bottom: 20px;
-    font-size: 1.8rem; /* Slightly smaller font size */
+    font-size: 1.8rem; 
   }
   
   .feature-text p {
-    margin-bottom: 25px; /* Reduced margin */
+    margin-bottom: 25px; 
   }
   
   .feature-text ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 25px; /* Reduced margin */
-    font-size: 0.9rem; /* Slightly smaller font size */
+    margin-bottom: 25px; 
+    font-size: 0.9rem; 
   }
   
   .feature-text ul li {
-    margin-bottom: 8px; /* Reduced margin */
+    margin-bottom: 8px; 
   }
   
   .feature-text button {
-    padding: 8px 16px; /* Reduced padding */
+    padding: 8px 16px;
     background-color: #ffc107;
     color: #000;
     border: none;
@@ -275,6 +275,111 @@
   
   .menu-button:focus {
     outline: none;
+  }
+
+  @media (max-width: 768px){
+    .hero h1 {
+      font-size: 15px;
+      font-weight: bold;
+      color: #f9f5f5;
+      line-height: 25px;
+    }
+
+    .hero p{
+      font-size: 15px;
+      line-height: 20px;
+    }
+    .feature i {
+      font-size: 20px;
+      color: #ff416c; 
+    }
+
+    .feature span {
+      font-size: 15px; 
+    }
+
+    .category h3 {
+      margin-bottom: 8px;
+      font-size: 0.7rem;
+    }
+
+    .btn-primary {
+      font-size: 15px; 
+      padding: 5px 1%;
+     
+    }
+
+    .promo-card{
+      line-height: 20px;
+    }
+
+    .promo-card h4 {
+      font-size: 0.6rem; 
+
+    }
+    
+    .promo-card h3 {
+      font-size: 0.7rem; 
+    }
+
+    .category p{
+      display: none;
+    }
+
+    .category a {
+      display: none;
+
+    }
+    
+    .promo-card p {
+      font-size: 0.7rem;
+      margin-bottom: 2px; 
+
+    }
+
+    .promo-card img {
+     left: 100px; 
+      bottom: 10px; 
+      width: 40px;
+      max-height: auto; 
+    }
+
+    .promo-card h4 {
+      margin-bottom: 2px;
+    }
+    
+    .promo-card h3 {
+      margin-bottom: 3px; 
+    }
+    
+  
+    
+    .feature-text h2 {
+      margin-bottom: 3px;
+      font-size: 0.8rem; 
+      line-height: 15px;
+    }
+    
+    .feature-text p {
+      margin-bottom: 3px; 
+      font-size: 0.6rem;
+    }
+    
+    .feature-text ul {
+      margin-bottom: 3px; 
+      font-size: 0.6rem; 
+    }
+    
+    .feature-text ul li {
+      margin-bottom: 2px; 
+    }
+    
+    .feature-text button {
+      padding: 2px 16px;
+    }
+    
+  
+    
   }
 
  

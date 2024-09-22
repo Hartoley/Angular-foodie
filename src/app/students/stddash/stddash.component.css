@@ -1,4 +1,4 @@
-/* General Reset */
+
 body, html {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ main{
   margin: 0;
 }
 
-/* Container */
+
 .contained{
   width: 100%;
   height: auto;
@@ -242,14 +242,14 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 1em;
   align-self: flex-start;  
-  margin-top: auto;  /* Pushes button to the bottom */
+  margin-top: auto; 
 }
 
 .dish-card button:hover {
   background: #ff416c;
 }
 
-/* General Cart Container Styling */
+
 .cart-container {
   max-width: 600px;
   margin: 20px auto;
@@ -260,7 +260,7 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Your Cart Header Styling */
+
 .yourCart {
   display: flex;
   justify-content: space-between;
@@ -295,7 +295,7 @@ nav ul li a:hover {
   background-color: #ff416c;
 }
 
-/* Displaying Total and Items */
+
 .displayCart1 {
   display: flex;
   justify-content: space-between;
@@ -334,7 +334,7 @@ nav ul li a:hover {
   margin-bottom: 0;
 }
 
-/* Item and Quantity Display */
+
 .displayCart {
   display: flex;
   align-items: center;
@@ -353,7 +353,7 @@ nav ul li a:hover {
   color: #555;
 }
 
-/* Icon Button Styling */
+
 .icon-button {
   background-color: #ff416c;
   color: #fff;
@@ -372,7 +372,7 @@ nav ul li a:hover {
   background-color: #ff416c;
 }
 
-/* Delete Button Styling */
+
 .delete-button {
   background-color: transparent;
   color: #ff416c;
@@ -389,7 +389,7 @@ nav ul li a:hover {
   color: #fff;
 }
 
-/* Empty Cart Message Styling */
+
 .empty-cart {
   text-align: center;
   color: #ff416c;
@@ -400,7 +400,7 @@ nav ul li a:hover {
 
 
 
-/* Cart Styles */
+
 .cart-container {
   max-width: 600px;
   margin: 20px auto;
@@ -465,7 +465,7 @@ button.delete-button:hover {
 }
 
 .icon-button i.material-icons {
-  font-size: 24px; /* Size of the icons */
+  font-size: 24px; 
   line-height: 1;
   color: #fff;
 }
@@ -476,7 +476,7 @@ button.delete-button:hover {
   font-weight: bold;
 }
 
-/* Footer Component */
+
 app-footer {
   background-color: #1c1c1c;
   color: #fff;
@@ -494,7 +494,7 @@ app-footer a:hover {
 }
 
 
-/* General Navigation Styles */
+
 nav {
   flex: 1;
   /* margin-left: 50px; */
@@ -504,7 +504,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  padding: 0; /* Remove padding */
+  padding: 0; /
 }
 
 nav ul li {
@@ -518,43 +518,124 @@ nav ul li a {
   transition: color 0.3s;
 }
 
-/* Responsive Styles for Navigation */
+
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column; /* Stack items vertically */
-    display: none; /* Initially hide on mobile */
-    width: 100%; /* Full width */
-    background-color: #1c1c1c; /* Background color for dropdown */
-    position: absolute; /* Positioning for dropdown */
-    top: 60px; /* Adjust based on header height */
+    flex-direction: column; 
+    display: none; 
+    width: 100%;
+    background-color: #1c1c1c; 
+    position: absolute; 
+    top: 60px; 
     left: 0;
-    z-index: 1000; /* Ensure it's on top */
+    z-index: 1000; 
   }
 
   nav ul.active {
-    display: flex; /* Show when active */
+    display: flex; 
   }
 
   nav ul li {
-    padding: 10px; /* Add padding for touch targets */
-    text-align: center; /* Center align text */
+    padding: 10px; 
+    text-align: center; 
   }
 
   .hamburger {
-    display: block; /* Show hamburger icon on mobile */
-    cursor: pointer; /* Change cursor */
-    color: #f5efef; /* Color of hamburger icon */
+    display: block; 
+    cursor: pointer; 
+    color: #f5efef; 
   }
 
 
   nav ul li {
     display: block; 
   }
-}
 
-
-@media (min-width: 769px) {
   .hamburger {
     display: none; 
   }
+
+  .contained{
+    width: 100vw;
+    /* background-color: red; */
+  }
+
+  .text-content h1{
+    font-size: 1rem; 
+  }
+
+  .text-content p{
+    font-size: 0.8rem;
+  }
+
+  .text-content{
+    width: 50%;
+    line-height: 1rem;
+  }
+
+  .hero-section{
+    gap: 1rem;
+  }
+
+  header{
+    display: none;
+  }
+
+  .buttons {
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .buttons button{
+    height: auto;
+    font-size: 0.8rem;
+    padding: 2px;
+  }
+
+
+
+.image-content img{
+  width: 48%;
+  height: 50%;
 }
+
+.dish-card{
+  line-height: 15px;
+  width: 45%;
+  height: 40vh;
+}
+
+
+.dish-card h2 {
+  font-size: 0.6rem;
+  margin-bottom: 3px;
+  height: 10vw;
+  line-height: 15px;
+ 
+}
+
+.dish-card .price {
+  font-size: 0.6rem;
+  margin-bottom: 10px;
+  line-height: 30px;
+  height: 3vw;
+}
+
+.dish-card p {
+ font-size: 0.6rem;
+  height: 15vw;
+  margin-bottom: 3px;
+}
+
+.dish-card button {
+  font-size: 0.5rem;
+  padding: 2px 5px;
+  margin-bottom: 3px;
+  
+}
+  
+}
+
+
+
