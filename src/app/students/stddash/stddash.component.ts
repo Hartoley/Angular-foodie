@@ -30,6 +30,7 @@ export class StddashComponent {
   public token:any;
   public email:any;
   public id:any;
+  public selectedIndex:any;
   productsList: any[] = [];
   products:any={
     product_name:"",
@@ -111,12 +112,12 @@ export class StddashComponent {
   }
 
 
-  addTOCart(i: any) {
+  addTOCart(i: any, index: number) {
     if (!Array.isArray(this.cart)) {
     
       this.cart = [];
     }
-  
+    
     const itemInCart = this.cart.find((item: any) => item.id === i.id);
   
     if (itemInCart) {
@@ -142,6 +143,7 @@ export class StddashComponent {
       }
     }).subscribe((response: any) => {
       this.message = response.message;
+      this.selectedIndex = index; 
       console.log('Cart updated successfully', response);
     }, error => {
       console.error('Error updating cart', error);

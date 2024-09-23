@@ -80,9 +80,9 @@
                 <div class="card-content">
                     <h2>{{dishes.product_name}}</h2>
                     <span class="price">${{dishes.product_price}}</span>
-                    <p>{{dishes.product_desc}}</p>
-                    <p *ngIf="message">{{ message }}</p>
-                    <button (click)="addTOCart(dishes)" [disabled]="dishes.addedToCart">{{dishes.addedToCart ? 'Added' : 'Add to cart'}}</button>
+                    <!-- <p>{{dishes.product_desc}}</p> -->
+                    <p *ngIf="selectedIndex === i">{{ message }}</p>
+                    <button (click)="addTOCart(dishes, i)" [disabled]="dishes.addedToCart">{{dishes.addedToCart ? 'Added' : 'Add to cart'}}</button>
                   
                 </div>
             </div>
