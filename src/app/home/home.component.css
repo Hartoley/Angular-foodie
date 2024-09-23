@@ -446,5 +446,51 @@
   .order-content img{
     display: none;
   }
+
+  .order-details h3 {
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .order-details p {
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 20px;
+  }
+
+  .order-details li{
+    font-size: 7px;
+    
+  }
+
+  .order-details {
+    width: 80%;
+  }
+
+  .customer-review {
+    /* padding: 0 0; */
+  }
+
+  .customer-review h3{
+    font-size: 12px;
+    
+
+  }
+  .customer-review p{
+    font-size: 10px;
+  }
+
+  .customer-review span{
+    font-size: 10px;
+  }
+
+  .review-card {
+    padding: 5px 0 0 0;
+  }
+
+  .customer-review h4{
+    font-size: 12px;
+  }
   }
     
