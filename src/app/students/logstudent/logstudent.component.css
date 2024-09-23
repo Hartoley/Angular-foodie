@@ -152,15 +152,17 @@ body, html {
 
   @media (max-width: 768px) {
     .login-card {
+      margin-top: 5vh;
+      height: 90%;
       flex-direction: column;
     }
-  
+    
     .login-left {
       height: 250px;
     }
 
     .login-container{
-      height: 94%;
+      height: 100%;
     }
   }
   

@@ -307,6 +307,15 @@ onFileChange(event: any) {
 
   }
 
+  signout() {
+    localStorage.removeItem('The token');
+    localStorage.removeItem('The email');
+    localStorage.removeItem('The id');
+    localStorage.removeItem('currentUser');
   
+    alert('You have successfully logged out.');
+  
+    this.router.navigate(['studentsignin'])  
+  }
 
 }

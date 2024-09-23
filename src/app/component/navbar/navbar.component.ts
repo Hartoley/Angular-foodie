@@ -23,7 +23,7 @@ export class NavbarComponent {
       this.counter = val
     })
   } 
-  
+
     public date = new Date().getDay();
     public toDelete:any = [];
     public newQ: Number = 1;
@@ -48,6 +48,7 @@ export class NavbarComponent {
       profile:null
     }
     message: string = '';
+    public showCart: boolean = true;
     public fetchedProducts:any;
     public paymentSuccessful:Boolean =false
    
@@ -58,7 +59,13 @@ export class NavbarComponent {
       this.email = localStorage.getItem('The email');
       this.id = localStorage.getItem('The id')
     
-      
+      this.router.events.subscribe(() => {
+        this.showCart = this.router.url !== '/studentsignin'; 
+      });
+
+      this.router.events.subscribe(() => {
+        this.showCart = this.router.url !== '/studentsignup'; 
+      });
       
       if (!this.token) {
         this.router.navigate(['studentsignin'])
@@ -319,12 +326,17 @@ export class NavbarComponent {
   
   
 
-  
-  public logged: string= "Log in"
-  public currentUser = localStorage.getItem('currentUser')
 
-  logout(){
-    localStorage.removeItem('currentUser')
-    this.router.navigate(['login'])
+
+  signout() {
+    localStorage.removeItem('The token');
+    localStorage.removeItem('The email');
+    localStorage.removeItem('The id');
+    localStorage.removeItem('currentUser');
+  
+    alert('You have successfully logged out.');
+  
+    this.router.navigate(['studentsignin'])  
   }
+  
 }
