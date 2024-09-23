@@ -49,6 +49,7 @@ export class NavbarComponent {
     }
     message: string = '';
     public showCart: boolean = true;
+    public showLogout: boolean = true;
     public fetchedProducts:any;
     public paymentSuccessful:Boolean =false
    
@@ -64,7 +65,15 @@ export class NavbarComponent {
       });
 
       this.router.events.subscribe(() => {
+        this.showLogout = this.router.url !== '/studentsignin'; 
+      });
+
+      this.router.events.subscribe(() => {
         this.showCart = this.router.url !== '/studentsignup'; 
+      });
+
+      this.router.events.subscribe(() => {
+        this.showLogout = this.router.url !== '/studentsignup'; 
       });
       
       if (!this.token) {

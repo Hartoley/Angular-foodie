@@ -17,7 +17,7 @@
         <li class="nav-item" id="cart"  *ngIf="showCart">
           <span (click)="toggleVisibility()" class="material-icons">shopping_cart</span>
         </li>
-        <a href="#" (click)="signout()" id="Logout" class="nav-link">
+        <a href="#" (click)="signout()" *ngIf="showLogout" id="Logout" class="nav-link">
           <i class="fas fa-sign-out-alt"></i> Logout
         </a>
 

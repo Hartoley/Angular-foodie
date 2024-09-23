@@ -520,6 +520,11 @@ nav ul li a {
 
 
 @media (max-width: 768px) {
+  .text-content{
+    margin-top: 2vh;
+    /* background-color: red; */
+  }
+  
   nav ul {
     flex-direction: column; 
     display: none; 
@@ -556,6 +561,7 @@ nav ul li a {
   }
 
   .contained{
+    
     width: 100vw;
     /* background-color: red; */
   }
@@ -596,7 +602,7 @@ nav ul li a {
 
 
 .image-content img{
-  width: 48%;
+  width: 95%;
   height: 50%;
 }
 

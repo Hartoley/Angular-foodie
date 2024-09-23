@@ -276,11 +276,23 @@
       position: fixed;
       width: 100vw;
     }
+    
+    .navbar-nav{
+      display: flex;
+      align-items: start;
+      margin-left: 0.3vw;
+      gap: 0.3rem;
+      width: 90%;
+      /* background-color: red; */
+     }
 
     #navbarNav {
-      position: absolute; 
-      z-index: 5;
-      top: 10vh;
+      margin-left: 0;
+      align-items: center;
+      position: absolute;
+      gap: 1px; 
+      z-index: 10;
+      top: 6vh;
       width: 100%;
       padding-left: 10px;
       background-color: #ff416c;
