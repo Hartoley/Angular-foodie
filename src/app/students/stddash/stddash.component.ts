@@ -145,6 +145,7 @@ export class StddashComponent {
       this.message = response.message;
       this.selectedIndex = index; 
       console.log('Cart updated successfully', response);
+      location.reload()
     }, error => {
       console.error('Error updating cart', error);
     });
@@ -176,6 +177,7 @@ export class StddashComponent {
     }).subscribe((response: any) => {
       alert('Cart updated successfully')
       console.log('Cart updated successfully', response);
+      location.reload()
     }, error => {
       console.error('Error updating cart', error);
     });
@@ -183,7 +185,7 @@ export class StddashComponent {
   
 
   decrease(item:any) {
-    if (item.quantity) {
+    if (item.quantity > 1) {
       this.newQ = Number(item.quantity) - 1;
       item.quantity = this.newQ;
     } else {
@@ -205,6 +207,7 @@ export class StddashComponent {
       this.message = response.message;
        alert('Cart updated successfully')
       console.log('Cart updated successfully', response);
+      location.reload()
     }, error => {
       console.error('Error updating cart', error);
     });
@@ -223,6 +226,7 @@ export class StddashComponent {
     }).subscribe((response: any) => {
       alert('Item deleted successfully')
       console.log('Item deleted successfully', response);
+      location.reload()
     }, error => {
       console.error('Error updating cart', error);
     });
