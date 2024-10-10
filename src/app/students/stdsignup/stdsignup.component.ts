@@ -3,11 +3,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../component/navbar/navbar.component';
+import { LandingHeaderComponent } from '../../component/landing-header/landing-header.component';
 
 @Component({
   selector: 'app-stdsignup',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule],
+  imports: [CommonModule, HttpClientModule, FormsModule, LandingHeaderComponent],
   templateUrl: './stdsignup.component.html',
   styleUrl: './stdsignup.component.css'
 })

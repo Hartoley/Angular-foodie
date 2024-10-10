@@ -4,17 +4,19 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { routes } from '../../app.routes';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, NavbarComponent,FormsModule, HttpClientModule],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']  
 })
 export class SignupComponent {
   constructor(public router: Router, public http: HttpClient) {}
   public allUsers: any = [];
+  public isLandingPage: boolean = false;
   public users: any = {
     first_name: "",
     last_name: "",

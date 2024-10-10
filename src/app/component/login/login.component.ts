@@ -3,18 +3,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule,NavbarComponent, FormsModule, HttpClientModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
 constructor(public router: Router, public http:HttpClient){}
 public Users: any[] = JSON.parse(localStorage.getItem('newUsers')!) ||[]
-public allUsers:any
+public allUsers: any
 public loggedInUsers:Array <{password: string, email: string}>=[]
 public logged : any ={
 

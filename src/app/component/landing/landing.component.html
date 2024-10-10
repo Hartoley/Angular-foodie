@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-landing-header></app-landing-header>
 <div class="contained">
   <header>
     <img
@@ -13,9 +13,6 @@
         <li><a href="#">Reserve Table</a></li>
         <li><a href="#">Packages</a></li>
         <li><a href="#">About us</a></li>
-        <span (click)="toggleVisibility()" class="material-icons"
-          >shopping_cart</span
-        >
       </ul>
     </nav>
   </header>
@@ -24,7 +21,7 @@
     <div *ngIf="cart.length > 0; else emptyCart">
       <div class="yourCart">
         <h1>Your Cart</h1>
-        <button (click)="makepayment()" class="pay-button">Pay</button>
+        <button class="pay-button">Pay</button>
       </div>
       <div class="displayCart1">
         <p>Total</p>
@@ -37,13 +34,13 @@
               >{{ ind + 1 }} {{ i.product_name }} {{ i.product_price }}</span
             >
             <p>{{ i.quantity }}</p>
-            <button (click)="increase(i)" class="icon-button">
+            <button class="icon-button">
               <i class="material-icons">add</i>
             </button>
-            <button (click)="decrease(i)" class="icon-button">
+            <button class="icon-button">
               <i class="material-icons">remove</i>
             </button>
-            <button (click)="onDelete(i)" class="delete-button">Delete</button>
+            <button class="delete-button">Delete</button>
           </div>
         </li>
       </ul>
@@ -92,10 +89,7 @@
           <span class="price">${{ dishes.product_price }}</span>
           <!-- <p>{{dishes.product_desc}}</p> -->
           <p *ngIf="selectedIndex === i">{{ message }}</p>
-          <button
-            (click)="addTOCart(dishes, i)"
-            [disabled]="dishes.addedToCart"
-          >
+          <button [disabled]="dishes.addedToCart">
             {{ dishes.addedToCart ? "Added" : "Add to cart" }}
           </button>
         </div>

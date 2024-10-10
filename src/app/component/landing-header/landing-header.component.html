@@ -37,16 +37,12 @@
           >shopping_cart</span
         >
       </li>
-      <a
-        href="#"
-        (click)="signout()"
-        *ngIf="showLogout"
-        id="Logout"
-        class="nav-link"
-      >
-        <i class="fas fa-sign-out-alt"></i> Logout
-      </a>
     </ul>
+
+    <div class="button-container w-50 px-4">
+      <button (click)="signup()" class="btn-join">Join Us</button>
+      <button (click)="signin()" class="btn-login">Log In</button>
+    </div>
   </div>
   <div *ngIf="isVisible" class="cart-container">
     <div *ngIf="cart.length > 0; else emptyCart">

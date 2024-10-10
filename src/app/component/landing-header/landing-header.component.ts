@@ -10,14 +10,14 @@ import { Router, RouterModule } from '@angular/router';
 import { CounterserviceService } from '../../counterservice.service';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-landing-header',
   standalone: true,
-  imports: [FormsModule, RouterModule, CommonModule, HttpClientModule, FooterComponent, TotestComponent, HomeComponent],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+   imports: [FormsModule, RouterModule, CommonModule, HttpClientModule, FooterComponent, TotestComponent, HomeComponent],
+  templateUrl: './landing-header.component.html',
+  styleUrl: './landing-header.component.css'
 })
-export class NavbarComponent {
-  public counter:number=0
+export class LandingHeaderComponent {
+   public counter:number=0
   constructor(public router: Router, public counterService: CounterserviceService,  public http: HttpClient){
     this.counterService.counter.subscribe(val=>{
       this.counter = val
@@ -51,8 +51,7 @@ export class NavbarComponent {
     public showCart: boolean = true;
     public showLogout: boolean = true;
     public fetchedProducts:any;
-  public paymentSuccessful: Boolean = false
-  
+    public paymentSuccessful:Boolean =false
    
    
   
@@ -133,7 +132,16 @@ export class NavbarComponent {
      
     
    
-    }
+  }
+  
+  signin() {
+          this.router.navigate(['studentsignin'])  
+  }
+
+    signup() {
+          this.router.navigate(['studentsignup'])  
+  }
+  
   
   
     addTOCart(i: any) {
@@ -348,5 +356,5 @@ export class NavbarComponent {
   
     this.router.navigate(['studentsignin'])  
   }
-  
+
 }

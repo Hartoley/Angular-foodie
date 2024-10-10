@@ -6,11 +6,12 @@ import { Router } from '@angular/router';
 import { FooterComponent } from '../../component/footer/footer.component';
 import { TotestComponent } from '../../component/totest/totest.component';
 import { HomeComponent } from '../../home/home.component';
+import { NavbarComponent } from '../../component/navbar/navbar.component';
 
 @Component({
   selector: 'app-stddash',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FooterComponent, TotestComponent, HomeComponent],
+  imports: [CommonModule, HttpClientModule, FooterComponent, TotestComponent, HomeComponent, NavbarComponent],
   templateUrl: './stddash.component.html',
   styleUrl: './stddash.component.css'
 })
@@ -112,44 +113,50 @@ export class StddashComponent {
   }
 
 
-  addTOCart(i: any, index: number) {
+ addTOCart(i: any, index: number) {
     if (!Array.isArray(this.cart)) {
-    
-      this.cart = [];
+        this.cart = [];
     }
-    
+
     const itemInCart = this.cart.find((item: any) => item.id === i.id);
-  
+
     if (itemInCart) {
-      itemInCart.quantity += 1;
+        if (itemInCart.quantity) {
+            itemInCart.quantity += 1; 
+        } else {
+            itemInCart.quantity = 1;
+        }
     } else {
-      i.quantity = 1;
-      i.addedToCart = true;
-      this.cart.push(i);
+        i.quantity = 1; 
+        i.addedToCart = true;
+        this.cart.push(i);
     }
 
     const dataToSend = {
-      product_id : i.id,
-      product_name: i.product_name,
-      product_price: i.product_price,
-      quantity: i.quantity,
-      user_id: this.id,
+        product_id: i.id,
+        product_name: i.product_name,
+        product_price: i.product_price,
+        quantity: i.quantity,
+        user_id: this.id,
     };
+
     console.log(dataToSend);
-    
+
     this.http.post("http://localhost/php/students/cart.php", dataToSend, {
-      headers: {
-        "Content-Type": "application/json"
-      }
+        headers: {
+            "Content-Type": "application/json"
+        }
     }).subscribe((response: any) => {
-      this.message = response.message;
+        this.message = response.message;
       this.selectedIndex = index; 
-      console.log('Cart updated successfully', response);
-      location.reload()
+        alert('Cart updated successfully')
+        console.log('Cart updated successfully', response);
+        location.reload();
     }, error => {
-      console.error('Error updating cart', error);
+        console.error('Error updating cart', error);
     });
-  }
+}
+
   
   
   increase(item: any) {
@@ -177,7 +184,7 @@ export class StddashComponent {
     }).subscribe((response: any) => {
       alert('Cart updated successfully')
       console.log('Cart updated successfully', response);
-      location.reload()
+      
     }, error => {
       console.error('Error updating cart', error);
     });
@@ -301,8 +308,7 @@ onFileChange(event: any) {
 
     });
 
-
-      this.http.post("http://localhost/php/students/clearCart.php", dataToSend, {
+  this.http.post("http://localhost/php/students/clearCart.php", dataToSend, {
         headers: {
           "Content-Type": "application/json"
         }

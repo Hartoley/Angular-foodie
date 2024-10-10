@@ -13,10 +13,12 @@ import { TestmodeComponent } from './material/testmode/testmode.component';
 import { StdsignupComponent } from './students/stdsignup/stdsignup.component';
 import { LogstudentComponent } from './students/logstudent/logstudent.component';
 import { StddashComponent } from './students/stddash/stddash.component';
+import { LandingComponent } from './component/landing/landing.component';
+
 
 
 export const routes: Routes = [
-    {path: '', pathMatch:'full', redirectTo:'app'}, 
+    // {path: '', pathMatch:'full', redirectTo:'app'}, 
     {path:'todo', component:TodoComponent, canActivate:[userGuard]},
     {path:'home', component:HomeComponent},
     {path:'navbar', component:NavbarComponent},
@@ -25,11 +27,12 @@ export const routes: Routes = [
     {path:'wishlist',component:NewtodoComponent},
     {path:'switch', component:SwitchComponent},
     {path:'oneuser/:id', component:OneUserComponent},
-    {path:'foodblog', component:FoodstoreComponent},
+    {path:'admindash', component:FoodstoreComponent},
     {path:'material', component:TestmodeComponent},
     {path:'studentsignup', component:StdsignupComponent},
     {path:'studentsignin', component:LogstudentComponent},
-    {path:'studentdash', component:StddashComponent},
+    { path: 'studentdash', component: StddashComponent },
+    {path:'', component:LandingComponent}
 
 
 ];

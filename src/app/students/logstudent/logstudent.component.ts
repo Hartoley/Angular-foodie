@@ -3,11 +3,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../component/navbar/navbar.component';
+import { LandingHeaderComponent } from '../../component/landing-header/landing-header.component';
 
 @Component({
   selector: 'app-logstudent',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, LandingHeaderComponent],
   templateUrl: './logstudent.component.html',
   styleUrl: './logstudent.component.css'
 })
