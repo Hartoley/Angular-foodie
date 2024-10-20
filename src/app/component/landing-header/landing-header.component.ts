@@ -135,11 +135,11 @@ export class LandingHeaderComponent {
   }
   
   signin() {
-          this.router.navigate(['studentsignin'])  
+          this.router.navigate(['usersignin'])  
   }
 
     signup() {
-          this.router.navigate(['studentsignup'])  
+          this.router.navigate(['usersignup'])  
   }
   
   

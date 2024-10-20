@@ -184,6 +184,7 @@ export class StddashComponent {
     }).subscribe((response: any) => {
       alert('Cart updated successfully')
       console.log('Cart updated successfully', response);
+      location.reload()
       
     }, error => {
       console.error('Error updating cart', error);
@@ -327,7 +328,7 @@ onFileChange(event: any) {
   
     alert('You have successfully logged out.');
   
-    this.router.navigate(['studentsignin'])  
+    this.router.navigate(['usersignin'])  
   }
 
 }

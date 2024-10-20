@@ -51,7 +51,7 @@ export class StdsignupComponent {
         (response: any) => {
           console.log(response);
           this.message = response.message;
-          this.router.navigate(['studentsignin'])  
+          this.router.navigate(['usersignin'])  
         },
         (error) => {
           console.log(error);

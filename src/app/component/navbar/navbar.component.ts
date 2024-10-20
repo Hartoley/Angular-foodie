@@ -62,23 +62,23 @@ export class NavbarComponent {
       this.id = localStorage.getItem('The id')
     
       this.router.events.subscribe(() => {
-        this.showCart = this.router.url !== '/studentsignin'; 
+        this.showCart = this.router.url !== '/usersignin'; 
       });
 
       this.router.events.subscribe(() => {
-        this.showLogout = this.router.url !== '/studentsignin'; 
+        this.showLogout = this.router.url !== '/usersignin'; 
       });
 
       this.router.events.subscribe(() => {
-        this.showCart = this.router.url !== '/studentsignup'; 
+        this.showCart = this.router.url !== '/usersignup'; 
       });
 
       this.router.events.subscribe(() => {
-        this.showLogout = this.router.url !== '/studentsignup'; 
+        this.showLogout = this.router.url !== '/usersignup'; 
       });
       
       if (!this.token) {
-        this.router.navigate(['studentsignin'])
+        this.router.navigate(['usersignin'])
       }else{
         this.http.get('http://localhost/php/admin/display.php').subscribe((Allproducts:any)=>{
           this.fetchedProducts = Allproducts.map((i:any)=>({
@@ -199,6 +199,8 @@ export class NavbarComponent {
       }).subscribe((response: any) => {
         alert('Cart updated successfully')
         console.log('Cart updated successfully', response);
+      location.reload()
+
       }, error => {
         console.error('Error updating cart', error);
       });
@@ -228,6 +230,8 @@ export class NavbarComponent {
         this.message = response.message;
          alert('Cart updated successfully')
         console.log('Cart updated successfully', response);
+      location.reload()
+
       }, error => {
         console.error('Error updating cart', error);
       });

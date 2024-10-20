@@ -182,11 +182,9 @@
 
 .button-container {
     display: flex;
-    /* Use flexbox for responsive layout */
     justify-content: center;
-    /* Center the buttons horizontally */
+    padding: 0 1.5rem;
     gap: 10px;
-    /* Space between buttons, adjust as needed */
 }
 
 .btn-join {
@@ -240,10 +238,23 @@
     .btn-join,
     .btn-login {
         font-size: 14px;
-        /* Smaller font size on mobile */
-        padding: 8px 16px;
+        background-color: #1c1c1c00;
+        padding: 0;
+        width: 7rem;
+        text-align: start;
         /* Adjust padding on mobile */
     }
+    .button-container{
+        display: flex;
+        flex-direction: column;
+        /* background-color: blue; */
+        padding: 0;
+        
+    }
+
+   
+
+   
 }
 
 .cart-container {

@@ -32,48 +32,11 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a>
       </li>
-      <li class="nav-item" id="cart" *ngIf="showCart">
-        <span (click)="toggleVisibility()" class="material-icons"
-          >shopping_cart</span
-        >
-      </li>
     </ul>
 
-    <div class="button-container w-50 px-4">
+    <div class="button-container w-50">
       <button (click)="signup()" class="btn-join">Join Us</button>
       <button (click)="signin()" class="btn-login">Log In</button>
     </div>
-  </div>
-  <div *ngIf="isVisible" class="cart-container">
-    <div *ngIf="cart.length > 0; else emptyCart">
-      <div class="yourCart">
-        <h1>Your Cart</h1>
-        <button (click)="makepayment()" class="pay-button">Pay</button>
-      </div>
-      <div class="displayCart1">
-        <p>Total</p>
-        <p><span>₦</span>{{ this.total }}</p>
-      </div>
-      <ul>
-        <li *ngFor="let i of cart; let ind = index">
-          <div class="displayCart">
-            <span
-              >{{ ind + 1 }} {{ i.product_name }} {{ i.product_price }}</span
-            >
-            <p>{{ i.quantity }}</p>
-            <button (click)="increase(i)" class="icon-button">
-              <i class="material-icons">add</i>
-            </button>
-            <button (click)="decrease(i)" class="icon-button">
-              <i class="material-icons">remove</i>
-            </button>
-            <button (click)="onDelete(i)" class="delete-button">Delete</button>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <ng-template #emptyCart>
-      <p class="empty-cart">You've not added any product to cart</p>
-    </ng-template>
   </div>
 </nav>

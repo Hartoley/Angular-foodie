@@ -29,9 +29,9 @@ export const routes: Routes = [
     {path:'oneuser/:id', component:OneUserComponent},
     {path:'admindash', component:FoodstoreComponent},
     {path:'material', component:TestmodeComponent},
-    {path:'studentsignup', component:StdsignupComponent},
-    {path:'studentsignin', component:LogstudentComponent},
-    { path: 'studentdash', component: StddashComponent },
+    {path:'usersignup', component:StdsignupComponent},
+    {path:'usersignin', component:LogstudentComponent},
+    { path: 'userdash', component: StddashComponent },
     {path:'', component:LandingComponent}
 
 
