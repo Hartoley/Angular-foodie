@@ -183,13 +183,14 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  width: 15vw;
+  width: 16vw;
   color: #f5efef;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between;  /* Ensures content is evenly distributed */
-  height: 40vw;  /* Increased height for uniformity */
+  height: 30vw;  /* Increased height for uniformity */
+  /* background-color: red; */
 }
 
 .dish-card img {
