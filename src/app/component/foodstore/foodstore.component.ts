@@ -97,6 +97,8 @@ export class FoodstoreComponent {
               product_img: null
             };
             this.message = 'Product uploaded successfully.';
+            location.reload()
+
           } else {
             this.message = 'Unexpected response from server.';
           }
@@ -176,6 +178,9 @@ export class FoodstoreComponent {
         next: (response: any) => {
           if (response.message === 'Product updated successfully') {
             alert('Product updated successfully');
+            this.updating = false;
+            location.reload()
+
             // this.fetchedProducts = this.fetchedProducts.map(product =>
             //   product.id === this.udatedProduct.id ? this.udatedProduct : product
             // );

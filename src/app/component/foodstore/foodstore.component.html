@@ -79,6 +79,10 @@
         <option value="Breakfast">Breakfast</option>
         <option value="Lunch">Lunch</option>
         <option value="Dinner">Dinner</option>
+        <option value="Appetizer">Appetizer</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Parfait">Parfait</option>
       </select>
     </div>
     <div>
@@ -153,6 +157,7 @@
     <div>
       <label for="product_description">Product Description</label>
       <textarea
+        required
         [(ngModel)]="udatedProduct.product_description"
         class="form-control my-2"
         name="product_description"

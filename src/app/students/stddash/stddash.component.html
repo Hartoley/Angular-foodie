@@ -88,9 +88,10 @@
       >
         <img src="http://localhost/php/admin/{{ dishes.product_img }}" alt="" />
         <div class="card-content">
-          <h2>{{ dishes.product_name }}</h2>
+          <h6>{{ dishes.product_name }}</h6>
           <span class="price">${{ dishes.product_price }}</span>
-          <!-- <p>{{dishes.product_desc}}</p> -->
+          <p>{{ dishes.product_desc }}</p>
+          <p id="inStock">{{ dishes.in_stock }} <span>Servings</span></p>
           <p *ngIf="selectedIndex === i">{{ message }}</p>
           <button
             (click)="addTOCart(dishes, i)"
